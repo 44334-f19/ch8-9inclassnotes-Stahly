@@ -1,13 +1,145 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 	<head> 
-		<title>LASTNAME Chapter8-9InClassNotes</title> 
+		<title>Stahl Chapter8-9InClassNotes</title> 
 		<meta charset="utf-8"> 
 		<style>
-		
+            table {margin: auto;
+            border: 5px solid #000;
+            border-spacing: 0px;
+            }
+            td, th{padding: .5em;}
+            caption {font-size: 1.2em};
+            #wrapper {display: flex;
+                      flex-direction: row;
+                        }
+            form{background-color: #eaeaea;
+            
+                font-family: Arial, sans-serif;
+            padding: 10px;
+            min-width: 400px;
+                }
+            fieldset{ border: 2px ridge #000;
+            padding: 10px;
+            }
+            label {float: left;
+            width: auto;
+            text-align: right;
+            padding-right: 10px;
+            clear: left;
+            margin-top: 10px;
+            }
+            input, textarea {margin-top: 10px;
+            display: block;
+            }
+            #stupers{flex: 2;}
+            #stuinfocol1{flex:2;}
+            #stuinfocol2{flex:3;}
+            #sturating{flex:2}
+            input {type="radio"}, input{type="checkbox"} {display: inline;}
 		</style>
 	</head> 
 <body> 
-
+    <h1>Student Information Table</h1>
+    <table>z
+        <caption>Course Schedule</caption>
+        <thead>
+        <tr>
+            <th id="time">time</th>
+            <th id="M">Monday</th>
+            <th id="t">Tuesday</th>
+            <th id="w">Wednesday</th>
+            <th id="tr">Thursday</th>
+            <th id="f">Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td headers="time">8:00-9:15am</td>
+            <td headers="m"></td>
+            <td headers="t">Chemistry</td>
+            <td headers="w"></td>
+            <td headers="tr">Chesmistry</td>
+            <td headers="f"></td>
+            </tr>
+            <tr>
+            <td headers="time">9:00-9:50</td>
+            <td headers="m">Web Dev II</td>
+            <td headers="t"></td>
+            <td headers="w">Web Dev II</td>
+            <td headers="tr"></td>
+            <td headers="f">Web Dev II</td>
+            </tr>
+             <tr>
+            <td headers="time">11:00-11:50</td>
+            <td headers="m">Graphic Design</td>
+            <td headers="t"></td>
+            <td headers="w">Graphic Design</td>
+            <td headers="tr"></td>
+            <td headers="f">Graphic Design</td>
+            </tr>
+        </tbody>
+        
+        
+    </table>
+    <h1>Student information Form</h1>
+    <p> Required Fields marked with an asterisk *</p>
+    <form method="post" action="http://webdevbasics.net/scripts/demo.php">
+    <div id="wrapper">
+        <fieldset id="stupers">
+        <label for="myName">Name:</label>
+        <input type="text" name="myName" id="myName" required="required" placeholder="your first and last name">
+         <label for="myAddress">Address:</label>
+        <input type="text" name="myAddress" id="myAddress" required="required" placeholder="your Address">
+           <label for="myEmail">Email:</label>
+        <input type="text" name="myEmail" id="myEmail" required="required" placeholder="you@yourdomain.com">
+             <label for="myUsername">Username:</label>
+        <input type="text" name="myUsername" id="myUsername" required="required" placeholder="your username">
+            <label for="myPassword">Password:</label>
+        <input type="text" name="myPassword" id="myPassword" required="required" placeholder="your Password">
+        </fieldset>
+        <fieldset id="stuinfocol1">
+        <legend>STudent Information</legend>
+            Select Status: <br>
+            <input type="radio" name="myStatus" id="GS" value="Graduate Student">Graduate Student<br>
+            <input type="radio" name="myStatus" id="Senior" value="Senior">Senior<br>
+            <input type="radio" name="myStatus" id="Junior" value="Junior">Junior<br>
+            <input type="radio" name="myStatus" id="Soph" value="Sophomore">Sophomore<br>
+            <input type="radio" name="myStatus" id="Fresh" value="Freshman">Freshman<br> <br>
+            
+            Select Organizations: <br>
+            <input type="Checkbox" name="MyOrg" id="ace" value="ACM">ACM<br>
+            <input type="Checkbox" name="MyOrg" id="Adink" value="Adink">Adink<br>
+            <input type="Checkbox" name="MyOrg" id="S" value="Soririty">Soritity<br>
+            <input type="Checkbox" name="MyOrg" id="F" value="ACM">Fraternity<br>
+            <input type="Checkbox" name="MyOrg" id="O" value="Other">Other<br>
+            
+            
+        </fieldset>
+        <fieldset id="stuinfocol2">
+        <legend>Campus</legend>
+           <label>Do you live on campus: </label>
+            <select size="1" name="campus" id="Campus">
+            <option value="yes">Yes </option> 
+            <option value="no">No </option>
+            </select>
+            
+            <label for="moveindate">Choose a move in date</label>
+            <input type="date" name="moveindate" id="myDate">
+            
+            
+        </fieldset>
+        <fieldset id="stuRating">
+        <legend> STudent Ratings/comments</legend>
+            <label for="myRating">How would you rate HW: (1/bad 10/good)</label>
+            <input type="range" name="myRating" id="myRating" min="1" max="10">
+            <label for="myComments">Comments</label>
+        <textarea name="myComments" id="Mycomments" rows="2" cols="20" required="required"></textarea>
+            <input id="mySubmit" type="submit" value="submit">
+            
+        </fieldset>
+    </div>    
+        </form>
+    
 </body> 
 </html> 
